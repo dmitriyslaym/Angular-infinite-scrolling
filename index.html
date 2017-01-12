@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Data</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+  <script src="js/lib/angular/angular.min.js"></script>
+  <script src="js/lib/angular/angular-animate.min.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/controllers/ScrollCtrl.js"></script>
+  <script src="js/directives/ScrollDirective.js"></script>
+</head>
+<body ng-controller="ScrollCtrl">
+
+
+	<div class="wrapper" scroll-event="getImages(12)">
+	    <div class="checkboxInput">
+	      <label>Scroll Configuration</label>
+	      <input type="checkbox" ng-model="infiniteScroll">
+	    </div>
+	    <img ng-repeat='i in items' ng-src='http://placehold.it/300x250&text=Image+Number+{{i.number}}' ng-click="deleteImg(items, i)">
+	</div>
+</body>
+</html>
